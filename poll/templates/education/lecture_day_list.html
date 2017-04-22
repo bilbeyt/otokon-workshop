@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Lecture Day List {% endblock %}
+
+{% block content %}
+
+<h2>Lectures</h2>
+<ul class="list-group">
+    {% for lecture_day in lecture_day_list %}
+    <li class="list_group_item"><a href="{% url 'lecture_poll' lecture_day.lecture.slug lecture_day.day %}">{{ lecture_day.lecture.name }}-Day #{{ lecture_day.day }} </a></li>
+    {% empty %}
+    <p>No lecture day</p>
+    {% endfor %}
+</ul>
+{% endblock %}

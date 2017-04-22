@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}Lecture List {% endblock %}
+
+{% block content %}
+{% bootstrap_messages %}
+<h2>Lectures</h2>
+<ul class="list-group">
+    {% for lecture in lecture_list %}
+    <li class="list_group_item"><a href="{% url 'lecture_detail' lecture.slug %}">{{ lecture.name }} </a></li>
+    {% empty %}
+    <p>No lecture</p>
+    {% endfor %}
+</ul>
+{% endblock %}

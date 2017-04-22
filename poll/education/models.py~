@@ -1,0 +1,13 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+from django.contrib.auth.models import User
+from django.db import models
+
+
+
+class Lecture(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100)
+    lecturer = models.ForeignKey(User)
+    creatd
+

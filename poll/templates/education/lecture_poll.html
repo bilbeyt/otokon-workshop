@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Poll{% endblock %}
+
+{% block content %}
+
+<h2>Poll for {{ lecture_day }}</h2>
+{% if check %}
+<div style="margin:0 auto;display:block;text-align:center;padding-top:5%">
+</h4 style="padding-bottom:2%">{{ lecture_day.code }}</h4>
+<form enctype="multipart/form-data" action="" method="post" class="form">
+       {% csrf_token %}
+       {{ form.as_p }}
+        <input type="submit" class="btn btn-primary">Submit</input>
+</form>
+</div>
+{% else %}
+<p>You can not attend.</p>
+{% endif %}
+{% endblock %}
