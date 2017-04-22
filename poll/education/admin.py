@@ -12,7 +12,7 @@ class LectureAdmin(admin.ModelAdmin):
 
 class LectureDayAdmin(admin.ModelAdmin):
     list_filter = ['lecture', 'is_available', ]
-    list_display = ['lecture', 'is_available', 'code']
+    list_display = ['lecture', 'day', 'is_available', 'code']
     exclude = ["code"]
 
 class LecturePollAdmin(admin.ModelAdmin):

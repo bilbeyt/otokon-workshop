@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
+{% load bootstrap3 %}
 {% block title %}Poll{% endblock %}
 
 {% block content %}
 
 <h2>Poll for {{ lecture_day }}</h2>
 {% if check %}
-<div style="margin:0 auto;display:block;text-align:center;padding-top:5%">
-</h4 style="padding-bottom:2%">{{ lecture_day.code }}</h4>
-<form enctype="multipart/form-data" action="" method="post" class="form">
+<div style="margin:0 auto;display:block;text-align:center;padding-top:10%">
+</h4 style="padding-bottom:5%">{{ lecture_day.code }}</h4>
+<form enctype="multipart/form-data" action="" method="post" class="form" style="max-width:15%;display:block;margin:0 auto;">
        {% csrf_token %}
-       {{ form.as_p }}
-        <input type="submit" class="btn btn-primary">Submit</input>
+       {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>
 {% else %}
